@@ -1,4 +1,4 @@
-package by.itacademy.asyrtseva;
+package by.itacademy.asyrtseva.steps;
 
 import by.itacademy.asyrtseva.page.FourComPage;
 import org.openqa.selenium.WebDriver;

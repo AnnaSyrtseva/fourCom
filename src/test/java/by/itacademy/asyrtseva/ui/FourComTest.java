@@ -1,7 +1,7 @@
 package by.itacademy.asyrtseva.ui;
 
 import by.itacademy.asyrtseva.BaseTest;
-import by.itacademy.asyrtseva.FourConStep;
+import by.itacademy.asyrtseva.steps.FourConStep;
 import by.itacademy.asyrtseva.domain.RandomUserData;
 import by.itacademy.asyrtseva.page.FourComPage;
 import org.junit.jupiter.api.Assertions;
