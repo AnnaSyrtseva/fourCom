@@ -1,4 +1,4 @@
-package by.itacademy.asyrtseva;
+package by.itacademy.asyrtseva.api;
 
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,11 @@
-package by.itacademy.asyrtseva;
+package by.itacademy.asyrtseva.page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class FourComPage {
     private String buttonCookie = "//*[@id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']";
@@ -9,9 +13,11 @@ public class FourComPage {
     private String inputEmail = "//div[@class='signIn-root-gus']//input[@autocomplete='email']";
     private String inputPassword = "//div[@class='signIn-root-gus']//input[@autocomplete='current-password']";
     private String buttonSubmit = "//button[@type='submit']";
-    private String textErrorCredentials ="//html/body/div[3]/main/div[2]/div[2]/div[1]/div/div[1]/span";//*[contains(@class, 'errorMessage-errorMessage-4tj')]";
+    private String textErrorCredentials ="//div[@class= 'errorMessage-root-CkJ']";//html/body/div[3]/main/div[2]/div[2]/div[1]/div/div[1]/span";//*[contains(@class, 'errorMessage-errorMessage-4tj')]";
     private String textEmptyEmailField = "//*[contains(@class, 'message-root_error-WKA message-root-rPy')]";
     private String textEmptyPasswordField = "//*[contains(@class, 'message-root_error-WKA message-root-rPy')]";
+    private String inputSearchFiled = "//input[@placeholder='Znajdź produkt...']";
+    private String productCard = "//div[@class= 'prefixbox-product-container ']";
 
     private WebDriver driver;
     public FourComPage(WebDriver driver) {this.driver = driver;}
@@ -37,6 +43,22 @@ public class FourComPage {
 
     public String getTextErrorEmptyPassword(){return driver.findElement(By.xpath(textEmptyPasswordField)).getText();}
 
+    public void sendKeysSearch(String textSearch){
+        driver.findElement(By.xpath(inputSearchFiled)).sendKeys(textSearch + Keys.ENTER);
+    }
 
+    public List<WebElement> getProductCards(){
+        return driver.findElements(By.xpath(productCard));
+    }
+
+    public void openHomePage(){
+        driver.get("https://4f.com.pl/");
+    }
+    public void printProductCardText(){
+        List<WebElement> productCrads = getProductCards();
+        for (WebElement productCard : productCrads){
+            System.out.println(productCard.getText() + "\n");
+        }
+    }
 
 }

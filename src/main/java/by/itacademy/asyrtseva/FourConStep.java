@@ -1,5 +1,6 @@
 package by.itacademy.asyrtseva;
 
+import by.itacademy.asyrtseva.page.FourComPage;
 import org.openqa.selenium.WebDriver;
 
 public class FourConStep {
