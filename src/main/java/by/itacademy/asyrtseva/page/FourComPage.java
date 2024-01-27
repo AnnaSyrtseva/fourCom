@@ -1,10 +1,14 @@
 package by.itacademy.asyrtseva.page;
 
+import by.itacademy.asyrtseva.driver.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class FourComPage {
@@ -20,7 +24,17 @@ public class FourComPage {
     private String productCard = "//div[@class= 'prefixbox-product-container ']";
 
     private WebDriver driver;
-    public FourComPage(WebDriver driver) {this.driver = driver;}
+    public FourComPage() {this.driver = MyDriver.getDriver();}
+
+    //public void clickButtonSearch() {
+    //        new WebDriverWait(MyDriver.getDriver(), Duration.ofSeconds(20))
+    //                .until(ExpectedConditions.presenceOfElementLocated(getButtonResetSearch()));
+    //        driver.findElement(By.xpath(buttonSearch)).click();
+    //        new WebDriverWait(MyDriver.getDriver(), Duration.ofSeconds(20))
+    //                .until(ExpectedConditions.presenceOfElementLocated(getHeaderSearchResult()));
+    //    }
+
+
 
     public void clickButtonCookie(){
         driver.findElement(By.xpath(buttonCookie)).click();

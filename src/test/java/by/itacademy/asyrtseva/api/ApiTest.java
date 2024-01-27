@@ -17,9 +17,9 @@ public class ApiTest {
                 .when().post("https://4f.com.pl/graphql")
                 .then().extract().response().asString();
         JsonPath js = new JsonPath(response);
-        String actiualResult = js.getString("errors.message");
+        String actualResult = js.getString("errors.message");
         String expectedResult = "[Podany e-mail lub hasło są niepoprawne. Upewnij się, że używasz poprawnego adresu e-mailowego i hasła, a następnie ponownie spróbuj się zalogować.]";
-        assertEquals(expectedResult, actiualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
@@ -30,9 +30,9 @@ public class ApiTest {
                 .when().post("https://4f.com.pl/graphql")
                 .then().extract().response().asString();
         JsonPath js = new JsonPath(response);
-        String actiualResult = js.getString("errors.message");
+        String actualResult = js.getString("errors.message");
         String expectedResult = "[Podaj adres email.]";
-        assertEquals(expectedResult, actiualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
@@ -43,9 +43,9 @@ public class ApiTest {
                 .when().post("https://4f.com.pl/graphql")
                 .then().extract().response().asString();
         JsonPath js = new JsonPath(response);
-        String actiualResult = js.getString("errors.message");
+        String actualResult = js.getString("errors.message");
         String expectedResult = "[Podaj hasło.]";
-        assertEquals(expectedResult, actiualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
@@ -73,7 +73,5 @@ public class ApiTest {
         String expectedResult = "[Podany e-mail lub hasło są niepoprawne. Upewnij się, że używasz poprawnego adresu e-mailowego i hasła, a następnie ponownie spróbuj się zalogować.]";
         assertEquals(expectedResult, actualResult);
     }
-
-
-
+    
 }

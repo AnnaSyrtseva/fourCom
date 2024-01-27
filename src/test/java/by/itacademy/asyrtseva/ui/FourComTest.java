@@ -6,17 +6,13 @@ import by.itacademy.asyrtseva.domain.RandomUserData;
 import by.itacademy.asyrtseva.page.FourComPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class FourComTest extends BaseTest {
+    FourComPage fourComPage = new FourComPage();
+    FourConStep fourComStep = new FourConStep();
 
     @Test
     public void testFourComInvalidCredentials() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        FourConStep fourComStep = new FourConStep(driver);
         fourComStep.openLoginFormFillAndSubmit(RandomUserData.getRandomEmail(),"qwertyyu");
         Thread.sleep(3000);
         String actualResult = fourComPage.getTextErrorCredentials();
@@ -27,9 +23,6 @@ public class FourComTest extends BaseTest {
 
     @Test
     public void testFourComEmptyEmail() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        FourConStep fourComStep = new FourConStep(driver);
         fourComStep.openLoginFormFillAndSubmit("","qwertyyu");
         Thread.sleep(3000);
         String actualResult = fourComPage.getTextErrorEmptyEmail();
@@ -40,9 +33,6 @@ public class FourComTest extends BaseTest {
 
     @Test
     public void testFourComEmptyPassword() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        FourConStep fourComStep = new FourConStep(driver);
         fourComStep.openLoginFormFillAndSubmit(RandomUserData.getRandomEmail(),"");
         Thread.sleep(3000);
         String actualResult = fourComPage.getTextErrorEmptyPassword();
@@ -53,9 +43,6 @@ public class FourComTest extends BaseTest {
 
     @Test
     public void testFourComEmptyCredentials() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        FourConStep fourComStep = new FourConStep(driver);
         fourComStep.openLoginFormFillAndSubmit("","");
         Thread.sleep(3000);
         String actualResult = fourComPage.getTextErrorEmptyPassword();
@@ -65,9 +52,6 @@ public class FourComTest extends BaseTest {
     }
     @Test
     public void testFourComIncorrectEmail() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        FourConStep fourComStep = new FourConStep(driver);
         fourComStep.openLoginFormFillAndSubmit("1111111111","qwertyyu");
         Thread.sleep(3000);
         String actualResult = fourComPage.getTextErrorCredentials();
@@ -75,16 +59,5 @@ public class FourComTest extends BaseTest {
         Assertions.assertEquals(expectedResult, actualResult);
 
     }
-
-    @Test
-    public void testFourComSearchKapelusz() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage(driver);
-        Thread.sleep(3000);
-        fourComPage.clickButtonCookie();
-        fourComPage.sendKeysSearch("KAPELUSZ");
-        List<WebElement> productCards = fourComPage.getProductCards();
-        fourComPage.printProductCardText();
-    }
-
 
 }
