@@ -14,49 +14,39 @@ public class FourComTest extends BaseTest {
     @Test
     public void testFourComInvalidCredentials() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit(RandomUserData.getRandomEmail(),"qwertyyu");
-        Thread.sleep(3000);
-        String actualResult = fourComPage.getTextErrorCredentials();
         String expectedResult = "Podany e-mail lub hasło są niepoprawne. Upewnij się, że używasz poprawnego adresu e-mailowego i hasła, a następnie ponownie spróbuj się zalogować.";
-        Assertions.assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, fourComPage.getTextErrorCredentials());
 
     }
 
     @Test
     public void testFourComEmptyEmail() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit("","qwertyyu");
-        Thread.sleep(3000);
-        String actualResult = fourComPage.getTextErrorEmptyEmail();
         String expectedResult = "To jest wymagane pole.";
-        Assertions.assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, fourComPage.getTextErrorEmptyEmail());
 
     }
 
     @Test
     public void testFourComEmptyPassword() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit(RandomUserData.getRandomEmail(),"");
-        Thread.sleep(3000);
-        String actualResult = fourComPage.getTextErrorEmptyPassword();
         String expectedResult = "To jest wymagane pole.";
-        Assertions.assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, fourComPage.getTextErrorEmptyPassword());
 
     }
 
     @Test
     public void testFourComEmptyCredentials() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit("","");
-        Thread.sleep(3000);
-        String actualResult = fourComPage.getTextErrorEmptyPassword();
         String expectedResult = "To jest wymagane pole.";
-        Assertions.assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, fourComPage.getTextErrorEmptyPassword());
 
     }
     @Test
     public void testFourComIncorrectEmail() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit("1111111111","qwertyyu");
-        Thread.sleep(3000);
-        String actualResult = fourComPage.getTextErrorCredentials();
         String expectedResult = "Podany e-mail lub hasło są niepoprawne. Upewnij się, że używasz poprawnego adresu e-mailowego i hasła, a następnie ponownie spróbuj się zalogować.";
-        Assertions.assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, fourComPage.getTextErrorCredentials());
 
     }
 

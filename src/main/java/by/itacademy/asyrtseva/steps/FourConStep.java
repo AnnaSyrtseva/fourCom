@@ -1,8 +1,8 @@
 package by.itacademy.asyrtseva.steps;
 
-import by.itacademy.asyrtseva.driver.MyDriver;
+import by.itacademy.asyrtseva.driver.WebDriver;
 import by.itacademy.asyrtseva.page.FourComPage;
-import org.openqa.selenium.WebDriver;
+import by.itacademy.asyrtseva.utils.Waiter;
 
 public class FourConStep {
     public void openLoginFormFillAndSubmit (String email, String password) throws InterruptedException{
@@ -12,11 +12,12 @@ public class FourConStep {
         fourComPage.sendKeysInputEmail(email);
         fourComPage.sendKeysInputPAssword(password);
         fourComPage.clickButtonSubmit();
+        Thread.sleep(3000);
     }
-    private WebDriver driver;
+    private org.openqa.selenium.WebDriver driver;
     FourComPage fourComPage;
     public FourConStep() {
-        this.driver = MyDriver.getDriver();
+        this.driver = WebDriver.getDriver();
         this.fourComPage = new FourComPage();
     }
 

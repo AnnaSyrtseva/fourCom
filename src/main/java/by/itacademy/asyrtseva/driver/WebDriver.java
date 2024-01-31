@@ -1,13 +1,12 @@
 package by.itacademy.asyrtseva.driver;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class MyDriver {
-    private static WebDriver driver;
-    public static WebDriver getDriver(){
+public class WebDriver {
+    private static org.openqa.selenium.WebDriver driver;
+    public static org.openqa.selenium.WebDriver getDriver(){
         if (driver == null){
             driver = new ChromeDriver();
             driver.manage().window().maximize();

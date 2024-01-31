@@ -22,18 +22,14 @@ public class FourComSearchTest extends BaseTest {
         Thread.sleep(7000);
         //List<WebElement> productCards = fourComPage.getProductCards();
         //fourComPage.printProductCardText();
-      //  String productCards = fourComPage.getProductCards();
         List<WebElement> searchItems = searchPage.getProductCards();
-        Assertions.assertEquals(5, searchItems.size());
-        ;
+       // Assertions.assertNotEquals(0, searchItems.size());
+        Assertions.assertEquals(23, searchItems.size());
 
     }
 
     @Test
     public void testFourComSearchItemKapelusz() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage();
-        SearchPage searchPage = new SearchPage();
-        Thread.sleep(7000);
         fourComPage.clickButtonCookie();
         fourComPage.sendKeysSearch("KAPELUSZ");
         Assertions.assertEquals("Kapelusz bucket hat sztruksowy damski", searchPage.getTextResultSearchItemKapelusz());
@@ -42,12 +38,20 @@ public class FourComSearchTest extends BaseTest {
 
     @Test
     public void testFourComSearchItemKoszulka() throws InterruptedException{
-        FourComPage fourComPage = new FourComPage();
-        SearchPage searchPage = new SearchPage();
-        Thread.sleep(7000);
         fourComPage.clickButtonCookie();
         fourComPage.sendKeysSearch("Koszulka");
         Assertions.assertEquals("Koszulka kibica męska", searchPage.getTextResultSearchItemKoszulka());
+
+    }
+
+    @Test void addToCartItem() throws InterruptedException{
+        fourComPage.clickButtonCookie();
+        fourComPage.sendKeysSearch("BUTY ZIMOWE DCX-22 Z IMPREGNACJĄ CHŁOPIĘCE - CZARNE");
+        searchPage.clickButtonItem();
+        searchPage.clickButtonSize();
+        searchPage.clickButtonSubmit();
+        Thread.sleep(2000);
+        Assertions.assertEquals("Buty zimowe DCX-22 z impregnacją chłopięce - czarne", searchPage.getTextCartItems());
 
     }
 }

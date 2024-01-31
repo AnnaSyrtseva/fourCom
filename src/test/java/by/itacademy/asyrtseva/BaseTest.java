@@ -1,26 +1,22 @@
 package by.itacademy.asyrtseva;
 
-import by.itacademy.asyrtseva.driver.MyDriver;
+import by.itacademy.asyrtseva.driver.WebDriver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
-    public WebDriver driver;
+    public org.openqa.selenium.WebDriver driver;
 
     @BeforeEach
-    public void baseStart() {
-        WebDriver driver = MyDriver.getDriver();
+    public void baseStart() throws InterruptedException{
+        org.openqa.selenium.WebDriver driver = WebDriver.getDriver();
         driver.get("https://4f.com.pl/");
-        /*driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to("https://4f.com.pl/");*/
-    }
+        Thread.sleep(7000);
+           }
 
     @AfterEach
     public void baseFinish() throws InterruptedException {
-        WebDriver driver = MyDriver.getDriver();
+        org.openqa.selenium.WebDriver driver = WebDriver.getDriver();
         Thread.sleep(1000);
         driver.quit();
     }
