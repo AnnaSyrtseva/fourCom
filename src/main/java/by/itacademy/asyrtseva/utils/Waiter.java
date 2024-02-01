@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class Waiter {
         public static void wait(String element){
-            new WebDriverWait(WebDriver.getDriver(), Duration.ofSeconds(30))
+            new WebDriverWait(WebDriver.getDriver(), Duration.ofSeconds(10))
                     .until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
         }
 

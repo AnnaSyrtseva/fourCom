@@ -11,8 +11,7 @@ public class BaseTest {
     public void baseStart() throws InterruptedException{
         org.openqa.selenium.WebDriver driver = WebDriver.getDriver();
         driver.get("https://4f.com.pl/");
-        Thread.sleep(7000);
-           }
+        }
 
     @AfterEach
     public void baseFinish() throws InterruptedException {

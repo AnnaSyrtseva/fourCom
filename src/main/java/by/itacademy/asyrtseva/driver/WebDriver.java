@@ -6,6 +6,7 @@ import java.time.Duration;
 
 public class WebDriver {
     private static org.openqa.selenium.WebDriver driver;
+
     public static org.openqa.selenium.WebDriver getDriver(){
         if (driver == null){
             driver = new ChromeDriver();

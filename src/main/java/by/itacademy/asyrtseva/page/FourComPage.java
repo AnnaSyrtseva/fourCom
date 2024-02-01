@@ -4,7 +4,10 @@ import by.itacademy.asyrtseva.driver.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class FourComPage {
@@ -20,10 +23,12 @@ public class FourComPage {
     private String productCard = "//div[@class= 'prefixbox-product-container ']";
 
     private org.openqa.selenium.WebDriver driver;
+    WebDriverWait wait = new WebDriverWait(WebDriver.getDriver(), Duration.ofSeconds(25));
     public FourComPage() {this.driver = WebDriver.getDriver();}
 
     public void clickButtonCookie(){
         driver.findElement(By.xpath(buttonCookie)).click();
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(buttonMyAccount)));
     }
 
     public void clickButtonMyAccount(){
