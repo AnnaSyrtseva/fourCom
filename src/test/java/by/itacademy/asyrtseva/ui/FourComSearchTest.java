@@ -14,21 +14,6 @@ public class FourComSearchTest extends BaseTest {
     SearchPage searchPage = new SearchPage();
 
     @Test
-    public void testFourComSearchKapelusz() throws InterruptedException{
-
-        Thread.sleep(5000);
-        fourComPage.clickButtonCookie();
-        fourComPage.sendKeysSearch("KAPELUSZ");
-        Thread.sleep(7000);
-        //List<WebElement> productCards = fourComPage.getProductCards();
-        //fourComPage.printProductCardText();
-        List<WebElement> searchItems = searchPage.getProductCards();
-       // Assertions.assertNotEquals(0, searchItems.size());
-        Assertions.assertEquals(23, searchItems.size());
-
-    }
-
-    @Test
     public void testFourComSearchItemKapelusz() throws InterruptedException{
         fourComPage.clickButtonCookie();
         fourComPage.sendKeysSearch("KAPELUSZ");

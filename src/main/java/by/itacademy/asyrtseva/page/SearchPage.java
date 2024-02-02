@@ -11,7 +11,7 @@ public class SearchPage {
     private String textResultSearchKoszulka = "//a[@title='Koszulka kibica męska']";
     private String getCountOfItems = "//div[@class='prefixbox-products-container tile-view']";
     private String buttonItem = "//div[@data-prefixbox-title_dl='Buty zimowe DCX-22 z impregnacją chłopięce - czarne 4FJRAW23FWINM033-21S Czarny']";
-    private String buttonSize = "//section[@class= 'productFullDetail-options-oo3']//button[@title='35']";
+    private String buttonSize = "//section[@class= 'productFullDetail-options-oo3']//button[@title='33']";
     private String buttonSubmit = "//*[@id='root']/main/div[2]/div[2]/div[2]/div[1]/div[2]/div/div/form/section[5]/div/button";
     private String textCartItems = "//*[@id='header-main']/header/div/div[2]/aside/div/div[2]/div[1]/div/div/a[2]";
     private org.openqa.selenium.WebDriver driver;

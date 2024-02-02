@@ -4,6 +4,8 @@ import by.itacademy.asyrtseva.driver.WebDriver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.sql.Driver;
+
 public class BaseTest {
     public org.openqa.selenium.WebDriver driver;
 
@@ -13,10 +15,14 @@ public class BaseTest {
         driver.get("https://4f.com.pl/");
         }
 
-    @AfterEach
+   /* @AfterEach
     public void baseFinish() throws InterruptedException {
-        org.openqa.selenium.WebDriver driver = WebDriver.getDriver();
+        org.openqa.selenium.WebDriver driver = WebDriver.quitDriver();
         Thread.sleep(1000);
         driver.quit();
+    }*/
+    @AfterEach
+    public void quit() {
+        WebDriver.quitDriver();
     }
 }

@@ -16,9 +16,16 @@ public class WebDriver {
         return driver;
     }
 
-    public static void closerDriver(){
+    public static org.openqa.selenium.WebDriver quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+        return null;
+    }
+    /*public static closerDriver(){
         driver.close();
         driver.quit();
-    }
+    }*/
 
 }
