@@ -23,9 +23,5 @@ public class WebDriver {
         }
         return null;
     }
-    /*public static closerDriver(){
-        driver.close();
-        driver.quit();
-    }*/
 
 }

@@ -42,6 +42,7 @@ public class FourComTest extends BaseTest {
         Assertions.assertEquals(expectedResult, fourComPage.getTextErrorEmptyPassword());
 
     }
+
     @Test
     public void testFourComIncorrectEmail() throws InterruptedException{
         fourComStep.openLoginFormFillAndSubmit("1111111111","qwertyyu");

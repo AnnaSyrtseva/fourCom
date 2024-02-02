@@ -15,12 +15,6 @@ public class BaseTest {
         driver.get("https://4f.com.pl/");
         }
 
-   /* @AfterEach
-    public void baseFinish() throws InterruptedException {
-        org.openqa.selenium.WebDriver driver = WebDriver.quitDriver();
-        Thread.sleep(1000);
-        driver.quit();
-    }*/
     @AfterEach
     public void quit() {
         WebDriver.quitDriver();
